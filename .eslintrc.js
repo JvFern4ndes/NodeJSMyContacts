@@ -13,6 +13,7 @@ module.exports = {
   rules: {
     'class-methods-use-this': 'off',
     'consistent-return': 'off',
-    'camelcase': 'off'
+    camelcase: 'off',
+    'no-unused-vars': ['error', { argsIgnorePattern: 'next' }],
   },
 };
