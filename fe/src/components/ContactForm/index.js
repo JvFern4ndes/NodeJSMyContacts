@@ -11,7 +11,10 @@ export default function ContactForm({ buttonlabel }) {
   return (
     <Form>
       <FormGroup>
-        <Input placeholder="Nome" />
+        <Input
+          placeholder="Nome"
+          onChange={(event) => console.log(event.target.value)}
+        />
       </FormGroup>
 
       <FormGroup
