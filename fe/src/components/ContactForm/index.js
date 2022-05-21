@@ -11,9 +11,6 @@ import Button from '../Button';
 export default function ContactForm({ buttonlabel }) {
   const [name, setName] = useState('');
 
-  const emailInput = document.getElementById('input-email');
-  emailInput.value;
-
   return (
     <Form>
       <FormGroup>
