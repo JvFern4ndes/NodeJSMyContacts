@@ -11,6 +11,9 @@ import Button from '../Button';
 export default function ContactForm({ buttonlabel }) {
   const [name, setName] = useState('');
 
+  const emailInput = document.getElementById('input-email');
+  emailInput.value;
+
   return (
     <Form>
       <FormGroup>
@@ -21,10 +24,8 @@ export default function ContactForm({ buttonlabel }) {
         />
       </FormGroup>
 
-      <FormGroup
-        error="O formato do e-mail é inválido."
-      >
-        <Input placeholder="E-mail" error />
+      <FormGroup>
+        <Input placeholder="E-mail" id="input-email" />
       </FormGroup>
 
       <FormGroup>
