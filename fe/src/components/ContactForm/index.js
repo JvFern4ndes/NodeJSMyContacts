@@ -17,6 +17,8 @@ export default function ContactForm({ buttonlabel }) {
   function handleSubmit(event) {
     event.preventDefault();
 
+    // Regra de negócio no Front e no Back...
+
     console.log({
       name, email, phone, category,
     });
