@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import { Form, ButtonContainer } from './styles';
 
 import FormGroup from '../FormGroup';
@@ -11,8 +11,19 @@ import Button from '../Button';
 export default function ContactForm({ buttonlabel }) {
   const [name, setName] = useState('');
 
+  const emailInput = useRef(null);
+
+  function handleClick() {
+    console.log(emailInput.current.value);
+  }
+
+  console.log('renderizou');
+
   return (
     <Form>
+      <button type="button" onClick={handleClick}>
+        Loga emailInput
+      </button>
       <FormGroup>
         <Input
           value={name}
@@ -22,7 +33,11 @@ export default function ContactForm({ buttonlabel }) {
       </FormGroup>
 
       <FormGroup>
-        <Input placeholder="E-mail" id="input-email" />
+        <Input
+          defaultValue="JoãoVictor@email.com"
+          placeholder="E-mail"
+          ref={emailInput}
+        />
       </FormGroup>
 
       <FormGroup>
