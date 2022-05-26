@@ -18,7 +18,14 @@ export default function ContactForm({ buttonlabel }) {
   const [phone, setPhone] = useState('');
   const [category, setCategory] = useState('');
 
-  const { setError, removeError, getErrorMessageByFieldName } = useErrors();
+  const {
+    errors,
+    setError,
+    removeError,
+    getErrorMessageByFieldName,
+  } = useErrors();
+
+  const isFormValid = (name && errors.length === 0);
 
   function handleNameChange(event) {
     setName(event.target.value);
@@ -48,7 +55,7 @@ export default function ContactForm({ buttonlabel }) {
     event.preventDefault();
 
     console.log({
-      name, email, phone: phone.replace(/\D/g, ''), category,
+      name, email, phone, category,
     });
   }
 
@@ -57,7 +64,7 @@ export default function ContactForm({ buttonlabel }) {
       <FormGroup error={getErrorMessageByFieldName('name')}>
         <Input
           error={getErrorMessageByFieldName('name')}
-          placeholder="Nome"
+          placeholder="Nome *"
           value={name}
           onChange={handleNameChange}
         />
@@ -94,10 +101,14 @@ export default function ContactForm({ buttonlabel }) {
       </FormGroup>
 
       <ButtonContainer>
-        <Button type="submit">
+        <Button type="submit" disabled={!isFormValid}>
           {buttonlabel}
         </Button>
       </ButtonContainer>
     </Form>
   );
 }
+
+ContactForm.propTypes = {
+  buttonlabel: PropTypes.string.isRequired,
+};
