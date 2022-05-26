@@ -52,3 +52,11 @@ export default function Home() {
     </Container>
   );
 }
+
+fetch('http://localhost:3000')
+  .then((response) => {
+    console.log('response', response);
+  })
+  .catch((error) => {
+    console.log('erro', error);
+  });
