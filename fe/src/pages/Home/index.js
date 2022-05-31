@@ -23,8 +23,6 @@ export default function Home() {
       });
   }, []);
 
-  console.log(contacts);
-
   return (
     <Container>
       <InputSearchContainer>
@@ -32,7 +30,10 @@ export default function Home() {
       </InputSearchContainer>
 
       <Header>
-        <strong>3 contatos</strong>
+        <strong>
+          {contacts.length}
+          {contacts.length === 1 ? ' contato' : ' contatos'}
+        </strong>
         <Link to="/new">Novo contato</Link>
       </Header>
 
