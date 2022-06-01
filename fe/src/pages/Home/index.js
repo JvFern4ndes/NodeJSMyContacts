@@ -46,25 +46,29 @@ export default function Home() {
         </header>
       </ListContainer>
 
-      <Card>
-        <div className="info">
-          <div className="contact-name">
-            <strong>Mateus Silva</strong>
-            <small>instagram</small>
+      {contacts.map((contact) => (
+        <Card key={contact.id}>
+          <div className="info">
+            <div className="contact-name">
+              <strong>{contact.name}</strong>
+              {contact.category_name && (
+                <small>{contact.category_name}</small>
+              )}
+            </div>
+            <span>{contact.email}</span>
+            <span>{contact.phone}</span>
           </div>
-          <span>mateus@devacademy.com.br</span>
-          <span>(41) 99999-9999</span>
-        </div>
 
-        <div className="actions">
-          <Link to="/edit/123">
-            <img src={edit} alt="Edit" />
-          </Link>
-          <button type="button">
-            <img src={trash} alt="Delete" />
-          </button>
-        </div>
-      </Card>
+          <div className="actions">
+            <Link to={`/edit/${contact.id}`}>
+              <img src={edit} alt="Edit" />
+            </Link>
+            <button type="button">
+              <img src={trash} alt="Delete" />
+            </button>
+          </div>
+        </Card>
+      ))}
     </Container>
   );
 }
