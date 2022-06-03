@@ -30,7 +30,6 @@ export default function Home() {
       try {
         setIsLoading(true);
 
-        // Service Layer
         const response = await fetch(
           `http://localhost:3001/contacts?orderBy=${orderBy}`,
         );
