@@ -10,9 +10,13 @@ class HttpClient {
 
     const response = await fetch(`${this.baseURL}${path}`);
 
+    const body = await response.json();
+
     if (response.ok) {
-      return response.json;
+      return body;
     }
+
+    console.log(body);
 
     throw new Error(`${response.status} - ${response.statusText}`);
   }
