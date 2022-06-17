@@ -26,4 +26,14 @@ class HttpClient {
   }
 }
 
+// Tipos de erro do JavaScript
+
+// EvalError
+// InternalError *
+// RangeError
+// Reference error
+// SyntaxError
+// TypeError
+// URIError
+
 export default HttpClient;
