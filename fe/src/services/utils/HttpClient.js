@@ -1,4 +1,5 @@
 import delay from '../../utils/delay';
+import APIError from '../../errors/APIError';
 
 class HttpClient {
   constructor(baseURL) {
@@ -20,20 +21,8 @@ class HttpClient {
       return body;
     }
 
-    throw new Error(
-      body?.error || `${response.status} - ${response.statusText}`,
-    );
+    throw new APIError(response, body);
   }
 }
-
-// Tipos de erro do JavaScript
-
-// EvalError
-// InternalError *
-// RangeError
-// Reference error
-// SyntaxError
-// TypeError
-// URIError
 
 export default HttpClient;
