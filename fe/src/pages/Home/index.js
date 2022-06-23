@@ -10,8 +10,10 @@ import {
 import arrow from '../../assets/images/icons/arrow.svg';
 import edit from '../../assets/images/icons/edit.svg';
 import trash from '../../assets/images/icons/trash.svg';
+import sad from '../../assets/images/sad.svg';
 
 import Loader from '../../components/Loader';
+import Button from '../../components/Button';
 
 import ContactsService from '../../services/ContactsService';
 
@@ -79,7 +81,13 @@ export default function Home() {
 
       {hasError && (
         <ErrorContainer>
-          Ocorreu um erro!
+          <img src={sad} alt="sad" />
+          <div className="details">
+            <strong>Ocorreu um erro ao obter os seus contatos!</strong>
+            <Button type="button">
+              Tentar novamente
+            </Button>
+          </div>
         </ErrorContainer>
       )}
 
