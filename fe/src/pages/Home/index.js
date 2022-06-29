@@ -28,6 +28,8 @@ export default function Home() {
     contact.name.toLowerCase().includes(searchTerm.toLowerCase())
   )), [contacts, searchTerm]);
 
+  // useMemo vs useCallback: analisando o código fonte do React (Aula teórica)!!
+
   const loadContacts = useCallback(async () => {
     try {
       setIsLoading(true);
