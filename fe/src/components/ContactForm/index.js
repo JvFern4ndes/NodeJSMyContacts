@@ -13,7 +13,7 @@ import Input from '../Input';
 import Select from '../Select';
 import Button from '../Button';
 
-export default function ContactForm({ buttonlabel }) {
+export default function ContactForm({ buttonlabel, onSubmit }) {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [phone, setPhone] = useState('');
@@ -71,7 +71,7 @@ export default function ContactForm({ buttonlabel }) {
   function handleSubmit(event) {
     event.preventDefault();
 
-    console.log({
+    onSubmit({
       name, email, phone, categoryID,
     });
   }
@@ -133,4 +133,5 @@ export default function ContactForm({ buttonlabel }) {
 
 ContactForm.propTypes = {
   buttonlabel: PropTypes.string.isRequired,
+  onSubmit: PropTypes.func.isRequired,
 };
