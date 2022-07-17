@@ -12,7 +12,6 @@ import FormGroup from '../FormGroup';
 import Input from '../Input';
 import Select from '../Select';
 import Button from '../Button';
-import Spinner from '../Spinner';
 
 export default function ContactForm({ buttonlabel, onSubmit }) {
   const [name, setName] = useState('');
@@ -132,9 +131,12 @@ export default function ContactForm({ buttonlabel, onSubmit }) {
       </FormGroup>
 
       <ButtonContainer>
-        <Button type="submit" disabled={!isFormValid || isSubmitting}>
-          {!isSubmitting && buttonlabel}
-          {isSubmitting && <Spinner size={16} />}
+        <Button
+          type="submit"
+          disabled={!isFormValid}
+          isLoading={isSubmitting}
+        >
+          {buttonlabel}
         </Button>
       </ButtonContainer>
     </Form>
