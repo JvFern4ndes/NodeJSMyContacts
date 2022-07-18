@@ -9,11 +9,14 @@ import Routes from '../../Routes';
 
 import { Container } from './styles';
 
-function App() {
+import ToastContainer from '../Toast/ToastContainer';
+
+export default function App() {
   return (
     <BrowserRouter>
       <ThemeProvider theme={defaultTheme}>
         <GlobalStyles />
+        <ToastContainer />
 
         <Container>
           <Header />
@@ -23,5 +26,3 @@ function App() {
     </BrowserRouter>
   );
 }
-
-export default App;
