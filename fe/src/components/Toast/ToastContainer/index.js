@@ -8,6 +8,8 @@ export default function ToastContainer() {
 
   useEffect(() => {
     function handleAddToast(event) {
+      console.log(event);
+
       const { type, text } = event.detail;
 
       setMessages((prevState) => [
