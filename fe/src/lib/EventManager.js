@@ -20,6 +20,16 @@ export default class EventManager {
       listener(payload);
     });
   }
+
+  removeListener(event, listenerToRemove) {
+    const listeners = this.listeners[event];
+
+    if (!this.listeners[event]) {
+      return;
+    }
+
+    const filteredListeners = listeners.filter();
+  }
 }
 
 const toastEventManager = new EventManager();
