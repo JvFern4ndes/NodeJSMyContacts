@@ -54,3 +54,5 @@ export default function EditContact() {
     </>
   );
 }
+
+// Entendendo a estratégia de State Lifting
