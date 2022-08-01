@@ -9,7 +9,6 @@ import ContactsService from '../../services/ContactsService';
 import toast from '../../utils/toast';
 
 export default function EditContact() {
-  const [contact, setContact] = useState({});
   const [isLoading, setIsLoading] = useState(true);
 
   const { id } = useParams();
@@ -22,7 +21,7 @@ export default function EditContact() {
           id,
         );
 
-        setContact(contactData);
+        console.log({ contactData });
         setIsLoading(false);
       } catch {
         history.push('/');
@@ -49,10 +48,8 @@ export default function EditContact() {
       />
 
       <ContactForm
-        key={contact.id}
         buttonlabel="Salvar alterações"
         onSubmit={handleSubmit}
-        contact={contact}
       />
     </>
   );
