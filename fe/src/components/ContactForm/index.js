@@ -14,7 +14,6 @@ import Select from '../Select';
 import Button from '../Button';
 
 const ContactForm = forwardRef(({ buttonlabel, onSubmit }, ref) => {
-  console.log('ContactForm.ref', ref);
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [phone, setPhone] = useState('');
@@ -31,6 +30,18 @@ const ContactForm = forwardRef(({ buttonlabel, onSubmit }, ref) => {
   } = useErrors();
 
   const isFormValid = (name && errors.length === 0);
+
+  useEffect(() => {
+    const refObject = ref;
+    refObject.current = {
+      setFieldsValues: (contact) => {
+        setName(contact.name);
+        setEmail(contact.email);
+        setPhone(contact.phone);
+        setCategoryID(contact.category_id);
+      },
+    };
+  }, [ref]);
 
   useEffect(() => {
     async function loadCategories() {

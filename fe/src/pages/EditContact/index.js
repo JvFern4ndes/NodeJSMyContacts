@@ -22,10 +22,7 @@ export default function EditContact() {
           id,
         );
 
-        console.log('EditContact.contactFormRef', contactFormRef);
-        // ContactForm.setFieldsValues(contact);
-
-        console.log({ contact });
+        contactFormRef.current.setFieldsValues(contact);
         setIsLoading(false);
       } catch {
         history.push('/');
