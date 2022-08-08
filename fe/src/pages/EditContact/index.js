@@ -48,7 +48,7 @@ export default function EditContact() {
       <Loader isLoading={isLoading} />
 
       <PageHeader
-        title={`Editar ${contactName}`}
+        title={isLoading ? 'Carregando...' : `Editar ${contactName}`}
       />
 
       <ContactForm
