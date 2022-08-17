@@ -77,7 +77,9 @@ export default function Home() {
     <Container>
       <Loader isLoading={isLoading} />
 
-      <Modal />
+      <Modal
+        danger
+      />
 
       {contacts.length > 0 && (
         <InputSearchContainer>
