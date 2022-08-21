@@ -30,5 +30,5 @@ Button.defaultProps = {
   type: 'button',
   disabled: false,
   isLoading: false,
-  danger: true,
+  danger: false,
 };
