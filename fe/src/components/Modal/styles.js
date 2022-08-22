@@ -21,15 +21,15 @@ export const Container = styled.div`
   padding: 24px;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.04);
 
-  h1 {
+  > h1 {
     font-size: 22px;
     color: ${({ theme, danger }) => (
     danger ? theme.colors.danger.main : theme.color.gray[900]
   )}
   }
 
-  p {
-    margin-top: 8px;
+  .modal-body {
+    margin-top: 32px;
   }
 `;
 

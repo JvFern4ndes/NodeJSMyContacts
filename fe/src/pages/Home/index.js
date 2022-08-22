@@ -80,7 +80,15 @@ export default function Home() {
       <Modal
         danger
         title="Tem certeza que deseja remover o contato ”Mateus Silva”?"
-      />
+        confirmLabel="Deletar"
+        onCancel={() => alert('Cancelou')}
+        onConfirm={() => alert('Confirmou')}
+      >
+        <h1>ushuahsuahs</h1>
+        <h2>shajhsjahs</h2>
+        <strong>ushauhsuahsuash</strong>
+        <p>shaushauhsau</p>
+      </Modal>
 
       {contacts.length > 0 && (
         <InputSearchContainer>
