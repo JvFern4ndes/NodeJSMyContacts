@@ -5,11 +5,11 @@ import { Overlay, Container, Footer } from './styles';
 
 import Button from '../Button';
 
-export default function Modal({ danger }) {
+export default function Modal({ danger, title }) {
   return ReactDOM.createPortal(
     <Overlay>
       <Container danger={danger}>
-        <h1>Titulo do modal</h1>
+        <h1>{title}</h1>
         <p>
           Corpo do modal
         </p>
@@ -30,6 +30,7 @@ export default function Modal({ danger }) {
 
 Modal.propTypes = {
   danger: PropTypes.bool,
+  title: PropTypes.string.isRequired,
 };
 
 Modal.defaultProps = {

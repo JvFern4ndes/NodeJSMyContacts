@@ -79,6 +79,7 @@ export default function Home() {
 
       <Modal
         danger
+        title="Tem certeza que deseja remover o contato ”Mateus Silva”?"
       />
 
       {contacts.length > 0 && (
